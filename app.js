@@ -1,4 +1,4 @@
-let visibleCount = 6;
+let visibleCount = 3;
 const galleryGrid = document.getElementById("gallery-grid");
 const loadMoreBtn = document.getElementById("load-more-btn");
 const counterSpan = document.getElementById("load-counter");
@@ -39,6 +39,7 @@ function renderCards(start, end) {
       <div class="card-footer">
         <div class="card-info">
           <h4 class="card-title">${item.id} · ${item.name}</h4>
+          <p class="card-subtitle">${item.subtitle || ""}</p>
         </div>
         <div class="card-actions">
           <button class="btn-action btn-copy" data-file="images/${item.file}">Copy</button>
@@ -62,7 +63,7 @@ if (galleryGrid && typeof HERO_DATA !== "undefined") {
       const prev = visibleCount;
       visibleCount = Math.min(visibleCount + 12, HERO_DATA.length);
       renderCards(prev, visibleCount);
-      counterSpan.textContent = `(Showing ${visibleCount} of ${HERO_DATA.length})`;
+      counterSpan.textContent = `(${visibleCount} of ${HERO_DATA.length})`;
 
       if (visibleCount >= HERO_DATA.length) {
         loadMoreBtn.disabled = true;
