@@ -30,7 +30,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 64px;
+  height: 76px;
+  padding: 0 64px;
   background-color: #ffffff;
   width: 100%;
 }
@@ -90,8 +91,8 @@ body {
   z-index: 1;
   display: inline-flex;
   align-items: center;
-  height: 50px;
-  padding: 0 22px;
+  height: 40px;
+  padding: 0 20px;
   border: 2px solid #111111;
   border-radius: 980px;
   color: #ffffff;
@@ -986,7 +987,7 @@ body {
 
 @media (max-width: 680px) {
   .site-header {
-    padding: 16px 20px;
+    padding: 0 20px;
   }
   .nav-menu {
     gap: 12px;
