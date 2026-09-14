@@ -32,8 +32,11 @@ body {
   align-items: center;
   height: 76px;
   padding: 0 64px;
-  background-color: #ffffff;
   width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.72) 100%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 12px 32px -20px rgba(0, 0, 0, 0.25);
 }
 
 .brand-logo {
@@ -162,6 +165,10 @@ body {
 
 .nav-cta-pill:hover .nav-cta-pill__blob {
   transform: translateZ(0) scale(1.4);
+}
+
+.nav-cta-pill__label-short {
+  display: none;
 }
 
 .nav-counter-pill {
@@ -995,6 +1002,19 @@ body {
   .nav-link {
     display: none;
   }
+  .nav-back-link {
+    display: inline;
+    font-size: 14px;
+  }
+  .nav-counter-pill {
+    display: none;
+  }
+  .nav-cta-pill__label-full {
+    display: none;
+  }
+  .nav-cta-pill__label-short {
+    display: inline;
+  }
   .hero-intro {
     padding: 48px 20px 32px;
   }
@@ -1011,6 +1031,24 @@ body {
   .gallery-grid, .playbook-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .playbook-grid {
+    padding: 20px 20px 40px;
+  }
+  .workflow-highlight-card {
+    width: auto;
+    margin: 0 20px 28px;
+    padding: 24px 20px;
+  }
+  .steps-container {
+    padding: 0 20px;
+  }
+  .playbook-card > div:first-child {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .playbook-card > div:first-child > div {
+    min-width: 0;
   }
   .callout-banner {
     flex-direction: column;

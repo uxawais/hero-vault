@@ -19,16 +19,40 @@
         <span class="brand-title">HERO VAULT</span>
       </a>
       <nav class="nav-menu">
-        <a href="index.html" class="nav-link">← Back to Vault</a>
+        <a href="index.html" class="nav-link nav-back-link">← Back to Vault</a>
         <span class="nav-counter-pill">Animation Playbook</span>
       </nav>
     </header>
 
     <!-- Guide Intro -->
     <section class="hero-intro">
-      <div class="creator-badge" style="cursor: default;">
-        <span style="letter-spacing: 0.04em; text-transform: uppercase;">Motion & Interactivity Masterclass</span>
-      </div>
+      <span class="bubble-badge">
+        <svg class="bubble-badge__goo" aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="bubble-goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"></feGaussianBlur>
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+              <feComposite in="SourceGraphic" in2="goo"></feComposite>
+            </filter>
+          </defs>
+        </svg>
+        <span class="bubble-badge__effect" aria-hidden="true">
+          <span class="bubble-badge__circle tl"></span>
+          <span class="bubble-badge__circle tl"></span>
+          <span class="bubble-badge__circle tl"></span>
+          <span class="bubble-badge__blob"></span>
+          <span class="bubble-badge__circle br"></span>
+          <span class="bubble-badge__circle br"></span>
+          <span class="bubble-badge__circle br"></span>
+        </span>
+        <a href="https://x.com/uxawais" target="_blank" rel="noopener noreferrer" class="creator-badge">
+          <span>Made by <strong>@uxawais</strong></span>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </span>
       <h1 class="hero-headline">Bring your hero sections to life with motion.</h1>
       <p class="hero-subhead">Static layouts only tell half the story. Here is the definitive guide on integrating AI video generation, prompt-driven motion, and interactive dynamics into these 65 layouts.</p>
     </section>
