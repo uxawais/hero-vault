@@ -910,6 +910,7 @@ body {
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
@@ -1003,6 +1004,18 @@ body {
   }
   .hero-headline {
     font-size: 42px;
+  }
+}
+
+@media (max-width: 680px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 681px) {
+  .mobile-only {
+    display: none !important;
   }
 }
 

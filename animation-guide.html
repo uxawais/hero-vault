@@ -55,8 +55,14 @@
           </svg>
         </a>
       </span>
-      <h1 class="hero-headline">Animate your hero layouts.</h1>
-      <p class="hero-subhead">Transform static layouts into responsive, interactive video and canvas experiences.</p>
+      <h1 class="hero-headline">
+        <span class="desktop-only">Bring your hero sections to life with motion.</span>
+        <span class="mobile-only">Animate your hero layouts.</span>
+      </h1>
+      <p class="hero-subhead">
+        <span class="desktop-only">Static layouts only tell half the story. Here is the definitive guide on integrating AI video generation, prompt-driven motion, and interactive dynamics into these 65 layouts.</span>
+        <span class="mobile-only">Transform static layouts into responsive, interactive video and canvas experiences.</span>
+      </p>
     </section>
 
     <!-- Tools Grid -->
@@ -64,27 +70,102 @@
       <!-- Fal.ai -->
       <div class="playbook-card featured">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
-          <h3 style="font-size: 22px; font-weight: 700; color: #111111;">Fal.ai MCP</h3>
+          <div>
+            <h3 style="font-size: 22px; font-weight: 700; color: #111111;">Fal.ai MCP</h3>
+            <span class="desktop-only" style="font-size: 13px; color: #86868b;">Fast AI Generation & Workflows</span>
+          </div>
           <span class="playbook-badge">★ Recommended</span>
         </div>
-        <p style="font-size: 14px; line-height: 1.55; color: #444444;">Agentic video generation (Kling, Luma, Minimax) right through MCP tool calls. Perfect for looping background textures, chrome fluids, and cosmic horizons.</p>
+        <p class="desktop-only" style="font-size: 14px; line-height: 1.55; color: #444444;">Directly invoke cutting-edge video diffusion models (Kling, Luma Dream Machine, Minimax) right through agentic MCP tool calls. Generate seamless looping background mp4s or hero motion elements directly from design prompts.</p>
+        <p class="mobile-only" style="font-size: 14px; line-height: 1.55; color: #444444;">Agentic video generation (Kling, Luma, Minimax) right through MCP tool calls. Perfect for looping background textures, chrome fluids, and cosmic horizons.</p>
+        <div class="desktop-only" style="padding-top: 12px; border-top: 1px solid #ebebf0;">
+          <strong style="font-size: 12px; color: #111111;">Best For:</strong>
+          <p style="font-size: 13px; color: #666666; margin-top: 4px;">Automated agent generation, looping canvas textures, liquid chrome, and cosmic backgrounds.</p>
+        </div>
       </div>
 
       <!-- Google Flow -->
       <div class="playbook-card">
-        <h3 style="font-size: 22px; font-weight: 700; color: #111111;">Google Flow</h3>
-        <p style="font-size: 14px; line-height: 1.55; color: #444444;">Interactive WebGL shaders and real-time physics reacting directly to pointer velocity, mouse hover, and scroll.</p>
+        <div>
+          <h3 style="font-size: 22px; font-weight: 700; color: #111111;">Google Flow</h3>
+          <span class="desktop-only" style="font-size: 13px; color: #86868b;">Real-time Interactive Physics</span>
+        </div>
+        <p class="desktop-only" style="font-size: 14px; line-height: 1.55; color: #444444;">Ideal for fluid physics, cursor magnetic attraction, particle explosions, and interactive web canvas shaders that react in real time to pointer movement and scroll velocity.</p>
+        <p class="mobile-only" style="font-size: 14px; line-height: 1.55; color: #444444;">Interactive WebGL shaders and real-time physics reacting directly to pointer velocity, mouse hover, and scroll.</p>
+        <div class="desktop-only" style="padding-top: 12px; border-top: 1px solid #ebebf0;">
+          <strong style="font-size: 12px; color: #111111;">Best For:</strong>
+          <p style="font-size: 13px; color: #666666; margin-top: 4px;">Cursor trail shaders, particle organisms (Layout 09), and kinetic typography deformation.</p>
+        </div>
       </div>
 
       <!-- Higgsfield AI -->
       <div class="playbook-card">
-        <h3 style="font-size: 22px; font-weight: 700; color: #111111;">Higgsfield AI</h3>
-        <p style="font-size: 14px; line-height: 1.55; color: #444444;">Cinematic 3D camera controls, rotational orbital pans, and depth fly-throughs for architecture and 3D scenes.</p>
+        <div>
+          <h3 style="font-size: 22px; font-weight: 700; color: #111111;">Higgsfield AI</h3>
+          <span class="desktop-only" style="font-size: 13px; color: #86868b;">Cinematic Camera Control</span>
+        </div>
+        <p class="desktop-only" style="font-size: 14px; line-height: 1.55; color: #444444;">Specializes in controllable 3D camera sweeps, cinematic zooms, and character/object depth parallax. Turn any static hero image into a cinematic 4K camera fly-through.</p>
+        <p class="mobile-only" style="font-size: 14px; line-height: 1.55; color: #444444;">Cinematic 3D camera controls, rotational orbital pans, and depth fly-throughs for architecture and 3D scenes.</p>
+        <div class="desktop-only" style="padding-top: 12px; border-top: 1px solid #ebebf0;">
+          <strong style="font-size: 12px; color: #111111;">Best For:</strong>
+          <p style="font-size: 13px; color: #666666; margin-top: 4px;">Dream architecture (Layout 06), spatial monoliths, and fashion runway hero scenes.</p>
+        </div>
       </div>
     </div>
 
-    <!-- Pro Shortcut -->
-    <div class="workflow-highlight-card">
+    <!-- Implementation Walkthrough (desktop) -->
+    <div class="steps-container desktop-only">
+      <div style="text-align: center; margin-bottom: 12px;">
+        <h2 style="font-size: 30px; font-weight: 700; color: #1d1d1f; letter-spacing: -0.02em;">Implementation Walkthrough: Step-by-Step</h2>
+        <p style="font-size: 16px; color: #6e6e73; margin-top: 6px;">How to export from this vault, animate in your chosen engine, and deploy into your frontend stack.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div>
+          <h4 style="font-size: 18px; font-weight: 700; color: #1d1d1f;">Pick & Export your Static Anchor Image</h4>
+          <p style="font-size: 14px; line-height: 1.55; color: #666666; margin-top: 6px;">Select any of the 65 layouts from the directory. Download the artwork as high-resolution PNG or WebP. This will serve as the first-frame initialization anchor.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div>
+          <h4 style="font-size: 18px; font-weight: 700; color: #1d1d1f;">Generate Motion via Fal.ai or Higgsfield AI</h4>
+          <p style="font-size: 14px; line-height: 1.55; color: #666666; margin-top: 6px;">Feed the image into Fal.ai (e.g. Kling / Luma) with a camera motion prompt: <em>"Slow continuous subtle fluid mercury ripples, cinematic studio lighting, seamless loop"</em> or use Higgsfield for orbital 3D camera pan.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div>
+          <h4 style="font-size: 18px; font-weight: 700; color: #1d1d1f;">Embed with Video or WebGL Canvas & Fallbacks</h4>
+          <p style="font-size: 14px; line-height: 1.55; color: #666666; margin-top: 6px;">Optimize the resulting video as an autoplaying, muted, looped WebM/H.264 mp4. Layer your typographic elements, buttons, and badges with CSS mix-blend-mode or backdrop-filter for native glassmorphism.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommended Pro Workflow (desktop) -->
+    <div class="workflow-highlight-card desktop-only">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 28px; height: 28px; border-radius: 50%; background-color: #0071e3; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">⚡</div>
+        <span style="font-size: 13px; font-weight: 700; color: #0071e3; text-transform: uppercase; letter-spacing: 0.04em;">Recommended Pro Workflow: The AI Agent Shortcut</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h3 style="font-size: 22px; font-weight: 700; color: #1d1d1f; letter-spacing: -0.02em;">Copy → Ask Any AI Agent → Generate with Fal.ai H3 Max</h3>
+        <p style="font-size: 15px; line-height: 1.6; color: #444444;">Once you click Copy on any hero layout from the vault, head over to your favorite AI agent (like Claude, ChatGPT, or Antigravity). Simply describe your vision:</p>
+
+        <div class="prompt-box">
+          <em>"Here is my hero layout. I want to animate this with slow, fluid motion and cinematic lighting. Give me an optimized motion prompt for a video generator."</em>
+        </div>
+
+        <p style="font-size: 15px; line-height: 1.6; color: #444444;">Take that refined prompt and run it through the Fal.ai H3 Max video model (or via Fal.ai MCP) to generate a stunning, high-definition looping interactive video ready to embed in your hero section.</p>
+      </div>
+    </div>
+
+    <!-- Pro Shortcut (mobile) -->
+    <div class="workflow-highlight-card mobile-only">
       <div style="display: flex; align-items: center; gap: 10px;">
         <div style="width: 28px; height: 28px; border-radius: 50%; background-color: #0071e3; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">⚡</div>
         <span style="font-size: 12px; font-weight: 700; color: #0071e3; text-transform: uppercase; letter-spacing: 0.04em;">Pro Shortcut: Copy → Agent → Fal.ai</span>
@@ -104,9 +185,16 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <p class="footer-gratitude">Made with care by @uxawais</p>
+      <p class="footer-gratitude">
+        <span class="desktop-only">Crafted by @uxawais for the design and developer community.</span>
+        <span class="mobile-only">Made with care by @uxawais</span>
+      </p>
       <div class="footer-links">
-        <a href="index.html" class="footer-link">← Back to 65+ Hero Vault</a>
+        <a href="index.html" class="footer-link">
+          <span class="desktop-only">← Return to 65+ Hero Vault</span>
+          <span class="mobile-only">← Back to 65+ Hero Vault</span>
+        </a>
+        <span class="footer-link desktop-only">© 2026 Hero Vault</span>
       </div>
     </footer>
   </div>

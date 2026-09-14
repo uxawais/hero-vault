@@ -1,4 +1,10 @@
-let visibleCount = 3;
+const isDesktop = () => window.matchMedia("(min-width: 681px)").matches;
+
+function counterText(count) {
+  return isDesktop() ? `(Showing ${count} of ${HERO_DATA.length})` : `(${count} of ${HERO_DATA.length})`;
+}
+
+let visibleCount = isDesktop() ? 6 : 3;
 const galleryGrid = document.getElementById("gallery-grid");
 const loadMoreBtn = document.getElementById("load-more-btn");
 const counterSpan = document.getElementById("load-counter");
@@ -57,13 +63,14 @@ function renderCards(start, end) {
 
 if (galleryGrid && typeof HERO_DATA !== "undefined") {
   renderCards(0, visibleCount);
+  if (counterSpan) counterSpan.textContent = counterText(visibleCount);
 
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener("click", () => {
       const prev = visibleCount;
       visibleCount = Math.min(visibleCount + 12, HERO_DATA.length);
       renderCards(prev, visibleCount);
-      counterSpan.textContent = `(${visibleCount} of ${HERO_DATA.length})`;
+      counterSpan.textContent = counterText(visibleCount);
 
       if (visibleCount >= HERO_DATA.length) {
         loadMoreBtn.disabled = true;
