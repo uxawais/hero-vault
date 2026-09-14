@@ -11,14 +11,20 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove("show"), 2200);
 }
 
-function copyImageLink(path) {
+function copyImage(path) {
   if (!path) return;
-  const fullUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, "") + path;
-  navigator.clipboard.writeText(fullUrl).then(() => {
-    showToast("Copied image link to clipboard!");
-  }).catch(() => {
-    showToast("Copied: " + path);
+  if (typeof ClipboardItem === "undefined" || !navigator.clipboard || !navigator.clipboard.write) {
+    showToast("Image copy isn't supported in this browser — use Download");
+    return;
+  }
+  const blobPromise = fetch(path).then((res) => {
+    if (!res.ok) throw new Error("Failed to load image");
+    return res.blob();
   });
+  navigator.clipboard
+    .write([new ClipboardItem({ "image/png": blobPromise })])
+    .then(() => showToast("Copied image to clipboard!"))
+    .catch(() => showToast("Couldn't copy image — use Download instead"));
 }
 
 function renderCards(start, end) {
@@ -44,7 +50,7 @@ function renderCards(start, end) {
   });
 
   document.querySelectorAll(".btn-copy").forEach(btn => {
-    btn.onclick = (e) => copyImageLink(e.target.getAttribute("data-file"));
+    btn.onclick = (e) => copyImage(e.target.getAttribute("data-file"));
   });
 }
 
@@ -201,7 +207,7 @@ if (lightbox) {
   document.getElementById("lightbox-zoom-out").addEventListener("click", () => zoomFromCenter(zoomLevel / 1.3));
   document.getElementById("lightbox-reset").addEventListener("click", resetZoom);
   lightboxCloseBtn.addEventListener("click", closeLightbox);
-  lightboxCopyBtn.addEventListener("click", () => copyImageLink(lightboxImg.getAttribute("src")));
+  lightboxCopyBtn.addEventListener("click", () => copyImage(lightboxImg.getAttribute("src")));
 
   document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("show")) return;

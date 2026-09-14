@@ -20,7 +20,26 @@
       </a>
       <nav class="nav-menu">
         <a href="#faq" class="nav-link">FAQ</a>
-        <a href="animation-guide.html" class="nav-cta-pill">⚡ Animate Layouts</a>
+        <a href="animation-guide.html" class="nav-cta-pill">
+          ⚡ Animate Layouts
+          <span class="nav-cta-pill__inner" aria-hidden="true">
+            <span class="nav-cta-pill__blobs">
+              <span class="nav-cta-pill__blob"></span>
+              <span class="nav-cta-pill__blob"></span>
+              <span class="nav-cta-pill__blob"></span>
+              <span class="nav-cta-pill__blob"></span>
+            </span>
+          </span>
+        </a>
+        <svg class="nav-cta-pill__goo" aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="8"></feGaussianBlur>
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+              <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+            </filter>
+          </defs>
+        </svg>
       </nav>
     </header>
 
@@ -100,7 +119,7 @@
       <div class="faq-list">
         <div class="faq-card">
           <h4 class="faq-question">How do I copy or download a layout?</h4>
-          <p class="faq-answer">Click "Copy" on any card to copy the clean direct image asset link straight to your clipboard, or click "Download" to save the high-resolution file directly to your disk.</p>
+          <p class="faq-answer">Click "Copy" on any card to copy the image itself straight to your clipboard, or click "Download" to save the high-resolution file directly to your disk.</p>
         </div>
 
         <div class="faq-card">
@@ -131,7 +150,7 @@
     <div class="lightbox-toolbar">
       <span id="lightbox-caption" class="lightbox-caption"></span>
       <div class="lightbox-controls">
-        <button id="lightbox-copy" class="lightbox-btn" aria-label="Copy image link" title="Copy image link">Copy</button>
+        <button id="lightbox-copy" class="lightbox-btn" aria-label="Copy image" title="Copy image">Copy</button>
         <a id="lightbox-download" class="lightbox-btn lightbox-btn-primary" href="#" download aria-label="Download image" title="Download image">Download</a>
         <span class="lightbox-divider"></span>
         <button id="lightbox-zoom-out" class="lightbox-btn" aria-label="Zoom out" title="Zoom out (−)">−</button>
