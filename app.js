@@ -11,6 +11,16 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove("show"), 2200);
 }
 
+function copyImageLink(path) {
+  if (!path) return;
+  const fullUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, "") + path;
+  navigator.clipboard.writeText(fullUrl).then(() => {
+    showToast("Copied image link to clipboard!");
+  }).catch(() => {
+    showToast("Copied: " + path);
+  });
+}
+
 function renderCards(start, end) {
   const slice = HERO_DATA.slice(start, end);
   slice.forEach(item => {
@@ -34,15 +44,7 @@ function renderCards(start, end) {
   });
 
   document.querySelectorAll(".btn-copy").forEach(btn => {
-    btn.onclick = (e) => {
-      const path = e.target.getAttribute("data-file");
-      const fullUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + path;
-      navigator.clipboard.writeText(fullUrl).then(() => {
-        showToast("Copied image link to clipboard!");
-      }).catch(() => {
-        showToast("Copied: " + path);
-      });
-    };
+    btn.onclick = (e) => copyImageLink(e.target.getAttribute("data-file"));
   });
 }
 
@@ -70,6 +72,8 @@ const lightboxStage = document.getElementById("lightbox-stage");
 const lightboxImg = document.getElementById("lightbox-img");
 const lightboxCaption = document.getElementById("lightbox-caption");
 const lightboxZoomLevel = document.getElementById("lightbox-zoom-level");
+const lightboxCopyBtn = document.getElementById("lightbox-copy");
+const lightboxDownloadLink = document.getElementById("lightbox-download");
 const lightboxCloseBtn = document.getElementById("lightbox-close");
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 6;
@@ -120,11 +124,14 @@ function openLightbox(src, alt) {
   lightboxImg.src = src;
   lightboxImg.alt = alt || "";
   lightboxCaption.textContent = alt || "";
+  lightboxCopyBtn.dataset.file = src;
+  lightboxDownloadLink.href = src;
+  lightboxDownloadLink.download = src.split("/").pop();
   resetZoom();
   lightbox.classList.add("show");
   lightbox.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
-  lightboxCloseBtn.focus({ preventScroll: true });
+  requestAnimationFrame(() => lightboxCloseBtn.focus({ preventScroll: true }));
 }
 
 function closeLightbox() {
@@ -194,6 +201,7 @@ if (lightbox) {
   document.getElementById("lightbox-zoom-out").addEventListener("click", () => zoomFromCenter(zoomLevel / 1.3));
   document.getElementById("lightbox-reset").addEventListener("click", resetZoom);
   lightboxCloseBtn.addEventListener("click", closeLightbox);
+  lightboxCopyBtn.addEventListener("click", () => copyImageLink(lightboxImg.getAttribute("src")));
 
   document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("show")) return;

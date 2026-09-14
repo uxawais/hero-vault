@@ -663,6 +663,24 @@ body {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+.lightbox-btn-primary {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #111111;
+}
+
+.lightbox-btn-primary:hover {
+  background-color: #f0f0f2;
+  border-color: #f0f0f2;
+}
+
+.lightbox-divider {
+  width: 1px;
+  height: 22px;
+  background-color: rgba(255, 255, 255, 0.18);
+  margin: 0 4px;
+}
+
 .lightbox-zoom-level {
   min-width: 50px;
   text-align: center;
@@ -700,6 +718,24 @@ body {
   }
   .lightbox-caption {
     display: none;
+  }
+  .lightbox-controls {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  .lightbox-btn {
+    height: 34px;
+    min-width: 34px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+  .lightbox-divider,
+  .lightbox-reset {
+    display: none;
+  }
+  .lightbox-zoom-level {
+    min-width: 44px;
   }
   .lightbox-stage {
     padding: 0 14px 14px;
