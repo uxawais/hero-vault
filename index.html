@@ -19,7 +19,6 @@
         <span class="brand-title">HERO VAULT</span>
       </a>
       <nav class="nav-menu">
-        <a href="#directory" class="nav-link">Directory</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="animation-guide.html" class="nav-playbook-pill">⚡ Animate Layouts</a>
         <span class="nav-counter-pill">65+ Layouts</span>
@@ -107,6 +106,22 @@
         <span class="footer-link">© 2026 Hero Vault</span>
       </div>
     </footer>
+  </div>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Hero preview" aria-hidden="true">
+    <div class="lightbox-toolbar">
+      <span id="lightbox-caption" class="lightbox-caption"></span>
+      <div class="lightbox-controls">
+        <button id="lightbox-zoom-out" class="lightbox-btn" aria-label="Zoom out" title="Zoom out (−)">−</button>
+        <span id="lightbox-zoom-level" class="lightbox-zoom-level">100%</span>
+        <button id="lightbox-zoom-in" class="lightbox-btn" aria-label="Zoom in" title="Zoom in (+)">+</button>
+        <button id="lightbox-reset" class="lightbox-btn lightbox-reset" aria-label="Reset zoom" title="Reset zoom (0)">Reset</button>
+        <button id="lightbox-close" class="lightbox-btn" aria-label="Close preview" title="Close (Esc)">✕</button>
+      </div>
+    </div>
+    <div id="lightbox-stage" class="lightbox-stage">
+      <img id="lightbox-img" class="lightbox-img" src="" alt="" draggable="false" />
+    </div>
   </div>
 
   <div id="toast" class="toast">Link copied to clipboard!</div>
