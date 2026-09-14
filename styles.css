@@ -24,11 +24,14 @@ body {
 }
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 22px 64px;
-  border-bottom: 1px solid #f0f0f2;
+  background-color: #ffffff;
   width: 100%;
 }
 
@@ -174,7 +177,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 88px 32px 56px;
+  padding: 80px 32px 56px;
   gap: 18px;
   width: 100%;
 }
